@@ -1,15 +1,15 @@
 const {User} = require('../model');
 
 const createUser = async (req, res) => {
-    const{firstName, lastName, userName, email, password,} = req.body;
+    const{userName, email, password, firstName, lastName} = req.body;
 
     try {
         const newUser = await User.create({
-        firstName,
-        lastName,
         userName,
         email,
         password,
+        firstName,
+        lastName,
         });
         res.json(newUser);
     } catch (error) {
