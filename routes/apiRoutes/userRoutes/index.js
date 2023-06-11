@@ -5,11 +5,14 @@ const router = require('express').Router();
 
 router.post('/', createUser);
 
-// the userName parameter added to this route is the same one withing the getUser function
-router.get('/:_id', getUser);
+// this route works
+router.get('/:userId', getUser);
+// this route works
 router.get('/', getAllUsers);
-router.post('/follower/:friend', addFriend);
-router.put('/', deleteUser);
+// this route works
+router.put('/:userId', deleteUser);
+// need help with those two routes
+router.put('/friend/:userId', addFriend);
 router.put('/follower/:friend', removeFriend);
 
 module.exports = router;
