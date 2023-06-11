@@ -12,7 +12,7 @@ router.get('/', getAllUsers);
 // this route works
 router.put('/:userId', deleteUser);
 // need help with those two routes
-router.put('/friend/:userId', addFriend);
-router.put('/follower/:friend', removeFriend);
+router.put('/friend/:userId/:friendId', addFriend);
+router.delete('/friend/:userId/:friendId', removeFriend);
 
 module.exports = router;
