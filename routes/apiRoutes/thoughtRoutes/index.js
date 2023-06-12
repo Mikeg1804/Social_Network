@@ -6,11 +6,11 @@ const router = require('express').Router();
 router.post('/', createThought);
 
 
-router.get('/', getThought);
+router.get('/:thoughtId', getThought);
 router.get('/', getAllThought);
-router.put('/', deleteThought);
-router.post('/reaction', addReaction);
-router.put('/reaction', removeReaction);
-
+router.put('/:thoughtId', deleteThought);
+router.post('/reaction/:thoughtId', addReaction);
+// router.put('/reaction/:thoughtId/:reactionId', removeReaction);
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router;
